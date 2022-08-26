@@ -1,26 +1,47 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap");
+
+
+*{
+  font-family: "Poppins", sans-serif;
+}
+body{
+    background-color: #f9fefcad;
+    overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html{
+  scroll-behavior: smooth;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media screen and (min-width: 720px){
+  .popular::-webkit-scrollbar{
+    width:0
   }
-  body {
-    color: white;
-    background: black;
-  }
+}
+
+.card-shadow {
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.card-image-shadow {
+  filter: drop-shadow(0px 224px 90px rgba(0, 0, 0, 0.01))
+    drop-shadow(0px 126px 76px rgba(0, 0, 0, 0.05))
+    drop-shadow(0px 56px 56px rgba(0, 0, 0, 0.09))
+    drop-shadow(0px 14px 31px rgba(0, 0, 0, 0.1))
+    drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+}
+
+.button-shadow{
+  filter: drop-shadow(4px 35px 14px rgba(0, 0, 0, 0.01)) drop-shadow(2px 19px 12px rgba(0, 0, 0, 0.05)) drop-shadow(1px 9px 9px rgba(0, 0, 0, 0.09)) drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+}
+
+
+.glass-nav{
+/* box-shadow: 0 8px 32px 0 rgb(0, 0, 0); */
+backdrop-filter: blur(40px );
+-webkit-backdrop-filter: blur( 40px );  
 }
