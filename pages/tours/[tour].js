@@ -115,7 +115,8 @@ const Details = ({ tours, tour }) => {
                 {tour?.images.map((image) => (
                   <img
                     src={image && urlFor(image).url()}
-                    alt=""
+                    alt="queens and canon safaris tours"
+                    key={image && urlFor(image).url()}
                     className="w-full h-[400px] 2xl:h-[600px] object-cover mx-auto group-hover:scale-110 transition-all duration-500"
                   />
                 ))}
@@ -123,7 +124,7 @@ const Details = ({ tours, tour }) => {
             ) : (
               <img
                 src={tour && urlFor(tour?.image).url()}
-                alt=""
+                alt="queens and canon safaris tours"
                 className="w-full h-[400px] 2xl:h-[600px] object-cover mx-auto group-hover:scale-110 transition-all duration-500"
               />
             )}
@@ -362,11 +363,7 @@ const Details = ({ tours, tour }) => {
             </div>
           </div>
           <div className="w-full max-w-[1720px] mx-auto">
-            <Populars
-              title={"More tour packages"}
-              path={"tours"}
-              data={same}
-            />
+            <Populars title={"More tour packages"} path={"tours"} data={same} />
           </div>
         </>
       )}

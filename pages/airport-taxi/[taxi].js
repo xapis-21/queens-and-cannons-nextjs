@@ -115,7 +115,8 @@ const Details = ({ taxis,taxi}) => {
                 {taxi?.images.map((image) => (
                   <img
                     src={image && urlFor(image).url()}
-                    alt=""
+                    alt="queens and cannon safaris taxis"
+                    key={image && urlFor(image).url()}
                     className="w-full h-[400px] 2xl:h-[600px] object-cover mx-auto group-hover:scale-110 transition-all duration-500"
                   />
                 ))}
@@ -225,7 +226,9 @@ const Details = ({ taxis,taxi}) => {
                       htmlFor="high"
                       className="ml-2 flex justify-between w-full items-center"
                     >
-                      <span className="text-[12px] max-w-[60%]">{"LUXURY"}</span>
+                      <span className="text-[12px] max-w-[60%]">
+                        {"LUXURY"}
+                      </span>
                       <span> USD {taxi?.high}</span>
                     </label>
                   </div>

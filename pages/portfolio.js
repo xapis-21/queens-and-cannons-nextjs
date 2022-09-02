@@ -14,6 +14,7 @@ const Portfolio = ({ data }) => {
               image={urlFor(image).width(500).height(500).url()}
               caption={caption}
               seo={seo}
+              key={caption+seo}
             />
           ))}
         </div>

@@ -96,7 +96,7 @@ const Menu = ({ func }) => {
                   ["Homes for rent", "homes-for-rent"],
                   ["Propery deals", "property-deals"],
                 ].map(([serv, link]) => (
-                  <Link href={link} onClick={func}>
+                  <Link href={link} onClick={func} key={link}>
                     <a className="px-2 w-full h-[40px] text-center hover:bg-green-light bg-white/90 my-[0.2px] text-[12px] flex items-center justify-center z-50">
                
                       {serv}
