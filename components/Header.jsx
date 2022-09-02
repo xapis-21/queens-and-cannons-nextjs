@@ -4,14 +4,13 @@ import { BsTelephoneFill, BsFillEnvelopeFill } from "react-icons/bs";
 import { HiOutlineMenu} from "react-icons/hi";
 import Link  from "next/link";
 import { Menu, Navbar } from "./Navbar";
-import logo from '../public/images/logo-full.svg'
 import Image from "next/image";
 
 const Header = () => {
   const [stickNav, setStickNav] = useState(false);
   const [toggleNav,setToggleNav] = useState(false)
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  
+
   const handleScroll = useCallback(() => {
     // find current scroll position
     const currentScrollPos = window.pageYOffset;

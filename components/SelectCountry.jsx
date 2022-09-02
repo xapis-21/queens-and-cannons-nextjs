@@ -30,8 +30,8 @@ const SelectCountry = ({ handleChange }) => {
         >
           <option value="">select country</option>
           {countries &&
-            countries.map(({ name }) => (
-              <option value={name.common} key={name.common}>{name.common}</option>
+            countries.map(({ name},i) => (
+              <option value={name.common} key={name.common + i}>{name.common}</option>
             ))}
         </select>
         <span className="peer-required:block pee peer-focus:hidden hidden absolute top-[50%] -translate-y-[50%] right-4 text-green-light">
