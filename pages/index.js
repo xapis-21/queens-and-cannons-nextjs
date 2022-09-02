@@ -1,29 +1,95 @@
 import { useState } from "react";
-import client from '../lib/sanity'
+import client from "../lib/sanity";
+import Head from "next/head";
+import { Hero, Search, Testimonials, Populars } from "../components";
 
+const Home = ({ tours, taxis, featuredTour, testimonials }) => {
+  const [searchQ, setSearchQ] = useState(null);
+  const [homeTours, setHomeTours] = useState(tours);
+  const [homeTaxi, setHomeTaxi] = useState(taxis);
 
-const Home = ({ tours, taxis, featuredTour }) => {
-  console.log(tours, taxis);
-  return <div>hello</div>;
+  const handleSearch = (e) => {
+    setSearchQ(e.target.value);
+    if (
+      searchQ !== "" ||
+      searchQ !== null ||
+      searchQ !== undefined ||
+      searchQ !== " "
+    ) {
+      setHomeTours(getSearchResults(tours, searchQ));
+      setHomeTaxi(getSearchResults(taxis, searchQ));
+    }
+  };
+
+  function getSearchResults(array, search) {
+    let results = array?.filter((item) => {
+      return (
+        item.excerpt.toLowerCase().includes(search) ||
+        item.location.toLowerCase().includes(search) ||
+        item.title.toLowerCase().includes(search)
+      );
+    });
+
+    return results;
+  }
+  return (
+    <div>
+      <Head>
+        <title>Hello</title>
+      </Head>
+      <main>
+        <Hero featured={featuredTour} />
+        <Search handleSearch={handleSearch} />
+        <div className="w-full isolate relative pb-40">
+          <div className="w-full mx-auto flex flex-col items-center max-w-[1720px]">
+            <Populars
+              title={"Popular Tours"}
+              path={"tours"}
+              data={
+                searchQ
+                  ? homeTours && homeTours
+                  : tours?.filter((item, i) => i < 20)
+              }
+            />
+
+            <Populars
+              title={"Airport Taxi"}
+              path={"airport-taxi"}
+              data={
+                searchQ
+                  ? homeTaxi && homeTaxi
+                  : taxis?.filter((item, i) => i < 5)
+              }
+            />
+          </div>
+        </div>
+        <Testimonials testimonials={testimonials} />
+      </main>
+    </div>
+  );
 };
 
-export const getServerSideProps = async ()=>{
+export const getServerSideProps = async () => {
   const toursQuery = '*[_type == "tours"] | order(_createdAt desc)';
   const taxiQuery = '*[_type == "taxi"] | order(_createdAt desc)';
   const featuredQuery =
     '*[_type == "tours" && isfeatured == true ]| order(_createdAt desc)[0]';
+  const testimonialQuery =
+    '*[_type == "testimonials"] | order(_createdAt desc)';
 
-    const tours = await client.fetch(toursQuery);
-    const taxis = await client.fetch(taxiQuery);
-    const featuredTour = await client.fetch(featuredQuery);
+  const tours = await client.fetch(toursQuery);
+  const taxis = await client.fetch(taxiQuery);
+  const testimonials = await client.fetch(testimonialQuery);
+  const featuredTour = await client.fetch(featuredQuery);
 
-    return {
-      props: {
-        tours,
-        taxis,
-        featuredTour,
-      },
-    };
-}
+  return {
+    props: {
+      tours,
+      taxis,
+      featuredTour,
+      testimonials,
+    },
+  };
+};
 
 export default Home;
