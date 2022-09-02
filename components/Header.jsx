@@ -30,11 +30,11 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed w-full h-16  z-50 top-0 left-0 ${
+      className={`fixed w-full h-16  z-50 top-0 left-0 backdrop:blur-lg ${
         stickNav && "bg-green-dark md:bg-green-dark/95"
       }  ${
         pathname !== "/" && "bg-green-dark md:bg-green-dark/95"
-      } transition-colors duration-500 bg-green-dark`}
+      } transition-colors duration-500`}
     >
       <div
         className={` w-full h-full flex text-white items-center justify-between text-sm px-2 lg:px-4 mx-auto`}
