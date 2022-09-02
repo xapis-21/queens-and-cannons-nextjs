@@ -11,14 +11,15 @@ const Header = () => {
   const [stickNav, setStickNav] = useState(false);
   const [toggleNav,setToggleNav] = useState(false)
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const handleScroll = () => {
+  
+  const handleScroll = useCallback(() => {
     // find current scroll position
     const currentScrollPos = window.pageYOffset;
     // set state based on location info (explained in more detail below)
     setStickNav(prevScrollPos > 100);
     // set state to new scroll position
     setPrevScrollPos(currentScrollPos);
-  };
+  },[]); 
    const router = useRouter();
    const pathname = router.pathname;
 
