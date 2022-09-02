@@ -1,54 +1,60 @@
 import { useState, useEffect } from "react";
 import BlockContent from "@sanity/block-content-to-react";
-import { useParams } from "react-router-dom";
 import { HiArrowSmLeft } from "react-icons/hi";
-import { client, urlFor } from "../client";
+import client, { urlFor } from "../../lib/sanity";
 import {
   MdAccessTime,
   MdOutlineLocationOn,
   MdOutlineErrorOutline,
 } from "react-icons/md";
 import { AiOutlineDollarCircle } from "react-icons/ai";
-import { Populars } from "../components";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import Checkout from "./Checkout";
+import { Checkout, Populars } from "../../components";
 
-const Details = ({ services, route, mid, low, high, title, type }) => {
-  const { slug } = useParams();
-  const query = `*[_type == "${type}" && slug.current == "${slug}"][0]`;
+const Details = ({ taxis,taxi}) => {
 
-  const [selectedService, setSelectedService] = useState(null);
-  const [selectedPrice, setSelectedPrice] = useState(selectedService?.low);
+
+//   const [selectedService, setSelectedService] = useState(null);
+  const [selectedPrice, setSelectedPrice] = useState(taxi?.low);
   const [level, setLevel] = useState("SELECT PACKAGE");
   const [showCheckout, setShowCheckout] = useState(false);
   const [error, setError] = useState(false);
 
-  useEffect(() => {
-    client
-      .fetch(query)
-      .then((posts_data) => {
-        setSelectedService(posts_data);
-      })
-      .catch(console.error);
-  }, [slug, query]);
+//   useEffect(() => {
+//     client
+//       .fetch(query)
+//       .then((posts_data) => {
+//         setSelectedService(posts_data);
+//       })
+//       .catch(console.error);
+//   }, [slug, query]);
+{/* <Details
+  services={taxi}
+  title={"More Airport Taxi packages"}
+  route={"airport-taxi"}
+  mid={"Mid-luxury"}
+  low={"Budget"}
+  high={"Luxury"}
+  type={"taxi"}
+/>; */}
 
   let same =
-    services &&
-    services
+    taxis &&
+    taxis
       .filter(({ _id }) => {
-        return _id !== selectedService?._id;
+        return _id !== taxi?._id;
       })
       .filter((item, i) => i < 5);
 
   const selectPrice = (e) => {
     setSelectedPrice(e.target.value);
     if (e.target.id === "low") {
-      setLevel("BOOK " + low.toUpperCase());
+      setLevel("BOOK BUGDET");
     } else if (e.target.id === "mid") {
-      setLevel("BOOK " + mid.toUpperCase());
+      setLevel("BOOK MID-LUXURY");
     } else if (e.target.id === "high") {
-      setLevel("BOOK " + high.toUpperCase());
+      setLevel("BOOK LUXURY");
     }
   };
 
@@ -92,21 +98,21 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
             checkout={showCheckout}
             price={selectedPrice}
             type={level}
-            title={selectedService?.title}
-            country={selectedService?.location}
+            title={taxi?.title}
+            country={taxi?.location}
           />
         </div>
       ) : (
         <>
           <div className="w-full mx-auto relative overflow-hidden group transition-all duration-600">
-            {selectedService?.images ? (
+            {taxi?.images ? (
               <Carousel
                 showThumbs={false}
                 infiniteLoop={true}
                 emulateTouch={true}
                 className="w-full h-[400px] 2xl:h-[600px]"
               >
-                {selectedService?.images.map((image) => (
+                {taxi?.images.map((image) => (
                   <img
                     src={image && urlFor(image).url()}
                     alt=""
@@ -116,7 +122,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
               </Carousel>
             ) : (
               <img
-                src={selectedService && urlFor(selectedService?.image).url()}
+                src={taxi && urlFor(taxi?.image).url()}
                 alt=""
                 className="w-full h-[400px] 2xl:h-[600px] object-cover mx-auto group-hover:scale-110 transition-all duration-500"
               />
@@ -124,7 +130,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
             <div className="absolute w-full bg-black/40 group-hover:opacity-0 transition-all duration-500 h-full top-0 left-0 grid place-item-center text-white">
               <div className="flex flex-col justify-center">
                 <h1 className="text-[30px] mx-auto text-center text-white font-medium max-w-[1000px] uppercase leading-10 grid place-items-center mb-2">
-                  {selectedService?.title}
+                  {taxi?.title}
                 </h1>
               </div>
             </div>
@@ -146,7 +152,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                     <span className="ml-2">Location</span>
                   </p>
                   <h1 className="text-2xl font-bold text-white">
-                    {selectedService?.location}
+                    {taxi?.location}
                   </h1>
                 </div>
                 <div className="flex flex-col items-start mt-4 mb-4">
@@ -155,7 +161,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                     <span className="ml-2">Duration</span>
                   </p>
                   <h1 className="text-2xl font-bold text-white">
-                    {selectedService?.duration}
+                    {taxi?.duration}
                   </h1>
                 </div>
                 <form
@@ -172,7 +178,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                       type="radio"
                       name="price"
                       onClick={selectPrice}
-                      value={selectedService?.low}
+                      value={taxi?.low}
                       id="low"
                       className="bg-black/0 border-1 border-white rounded-full h-4 w-4 checked:bg-green-dark focus:bg-green-dark hover:bg-green-dark outline-none"
                     />
@@ -181,10 +187,10 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                       className="ml-2 flex justify-between w-full items-center"
                     >
                       <span className="text-[12px] max-w-[60%]">
-                        {low}
-                        {console.log(selectedService?.low)}
+                        {"BUGDET"}
+                        {console.log(taxi?.low)}
                       </span>
-                      <span> USD {selectedService?.low}</span>
+                      <span> USD {taxi?.low}</span>
                     </label>
                   </div>
                   <div className="flex items-center mt-2  w-full">
@@ -192,7 +198,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                       type="radio"
                       name="price"
                       onClick={selectPrice}
-                      value={selectedService?.mid}
+                      value={taxi?.mid}
                       id="mid"
                       className="bg-black/0 border-1 border-white rounded-full h-4 w-4 checked:bg-green-dark focus:bg-green-dark hover:bg-green-dark outline-none"
                     />
@@ -201,9 +207,9 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                       className="ml-2 flex justify-between w-full items-center"
                     >
                       <span className="text-[12px] max-w-[60%]">
-                        {mid} {console.log(selectedService?.mid)}
+                        {"MID-LUXURY"} {console.log(taxi?.mid)}
                       </span>
-                      <span>USD {selectedService?.mid}</span>
+                      <span>USD {taxi?.mid}</span>
                     </label>
                   </div>
                   <div className="flex items-center  mt-2 w-full">
@@ -211,7 +217,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                       type="radio"
                       name="price"
                       onClick={selectPrice}
-                      value={selectedService?.high}
+                      value={taxi?.high}
                       id="high"
                       className="bg-black/0 border-1 border-white rounded-full h-4 w-4 checked:bg-green-dark focus:bg-green-dark hover:bg-green-dark outline-none"
                     />
@@ -219,8 +225,8 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                       htmlFor="high"
                       className="ml-2 flex justify-between w-full items-center"
                     >
-                      <span className="text-[12px] max-w-[60%]">{high}</span>
-                      <span> USD {selectedService?.high}</span>
+                      <span className="text-[12px] max-w-[60%]">{"LUXURY"}</span>
+                      <span> USD {taxi?.high}</span>
                     </label>
                   </div>
                   <button
@@ -233,7 +239,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
               </div>
               <div className="w-full max-w-[1000px] flex flex-col items-start  ml-4">
                 <p className="w-full text-[16px] mx-auto text-left ">
-                  {selectedService?.excerpt}
+                  {taxi?.excerpt}
                 </p>
                 <div className="w-full ">
                   <h1 className="uppercase text-[25px] font-[500] py-2">
@@ -241,7 +247,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                   </h1>
                   <article className="max-h-[800px] overflow-y-scroll rounded-lg p-4 pt-2 prose mx-auto prose-xl poppins text-gray-900 w-full prose-p:font-light prose-h3:w-fit prose-h3:px-2 prose-h4:text-purple-800 max-w-[1000px] ">
                     <BlockContent
-                      blocks={selectedService?.description}
+                      blocks={taxi?.description}
                       projectId="xclbzx3h"
                       dataset="production"
                       serializers={serializers}
@@ -262,7 +268,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                         <span className="ml-2">Location</span>
                       </p>
                       <h1 className="text-2xl font-bold text-white">
-                        {selectedService?.location}
+                        {taxi?.location}
                       </h1>
                     </div>
                     <div className="flex flex-col items-start mt-4 mb-4">
@@ -271,7 +277,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                         <span className="ml-2">Duration</span>
                       </p>
                       <h1 className="text-2xl font-bold text-white">
-                        {selectedService?.duration}
+                        {taxi?.duration}
                       </h1>
                     </div>
                     <form
@@ -288,7 +294,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                           type="radio"
                           name="price"
                           onClick={selectPrice}
-                          value={selectedService?.low}
+                          value={taxi?.low}
                           id="low"
                           className="bg-black/0 border-1 border-white rounded-full h-4 w-4 checked:bg-green-dark focus:bg-green-dark hover:bg-green-dark outline-none"
                         />
@@ -297,10 +303,10 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                           className="ml-2 flex justify-between w-full items-center"
                         >
                           <span className="text-[12px] max-w-[60%]">
-                            {low}
-                            {console.log(selectedService?.low)}
+                            {"BUDGET"}
+                            {console.log(taxi?.low)}
                           </span>
-                          <span> USD {selectedService?.low}</span>
+                          <span> USD {taxi?.low}</span>
                         </label>
                       </div>
                       <div className="flex items-center mt-2  w-full">
@@ -308,7 +314,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                           type="radio"
                           name="price"
                           onClick={selectPrice}
-                          value={selectedService?.mid}
+                          value={taxi?.mid}
                           id="mid"
                           className="bg-black/0 border-1 border-white rounded-full h-4 w-4 checked:bg-green-dark focus:bg-green-dark hover:bg-green-dark outline-none"
                         />
@@ -317,9 +323,9 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                           className="ml-2 flex justify-between w-full items-center"
                         >
                           <span className="text-[12px] max-w-[60%]">
-                            {mid} {console.log(selectedService?.mid)}
+                            {"MID-LUXURY"} {console.log(taxi?.mid)}
                           </span>
-                          <span>USD {selectedService?.mid}</span>
+                          <span>USD {taxi?.mid}</span>
                         </label>
                       </div>
                       <div className="flex items-center  mt-2 w-full">
@@ -327,7 +333,7 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                           type="radio"
                           name="price"
                           onClick={selectPrice}
-                          value={selectedService?.high}
+                          value={taxi?.high}
                           id="high"
                           className="bg-black/0 border-1 border-white rounded-full h-4 w-4 checked:bg-green-dark focus:bg-green-dark hover:bg-green-dark outline-none"
                         />
@@ -336,9 +342,9 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
                           className="ml-2 flex justify-between w-full items-center"
                         >
                           <span className="text-[12px] max-w-[60%]">
-                            {high}
+                            {"LUXURY"}
                           </span>
-                          <span> USD {selectedService?.high}</span>
+                          <span> USD {taxi?.high}</span>
                         </label>
                       </div>
                       <button
@@ -354,12 +360,31 @@ const Details = ({ services, route, mid, low, high, title, type }) => {
             </div>
           </div>
           <div className="w-full max-w-[1720px] mx-auto">
-            <Populars title={title} path={route} data={same} />
+            <Populars
+              title={"More Airport Taxi packages"}
+              path={"airport-taxi"}
+              data={same}
+            />
           </div>
         </>
       )}
     </div>
   );
+};
+
+export const getServerSideProps = async (context) => {
+  const taxiQuery = `*[_type == "taxi" && slug.current == "${context.params.taxi}"][0]`;
+  const sQuery = `*[_type == "taxi"]`;
+
+  const taxi = await client.fetch(taxiQuery);
+  const taxis = await client.fetch(sQuery);
+
+  return {
+    props: {
+      taxi,
+      taxis,
+    },
+  };
 };
 
 export default Details;

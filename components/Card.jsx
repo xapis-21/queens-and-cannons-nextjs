@@ -2,7 +2,7 @@ import Link  from "next/link";
 import TextTruncate from "react-text-truncate";
 
 const Card = ({ title, location, price, image, css, slug, route }) => {
-  const oldClass = `card-shadow group rounded-[20px] bg-white pt-2 px-2 flex flex-col items-center grid-cols-1 xs:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5 ${css} `;
+
   return (
     <div
       className={`card-shadow group rounded-[20px] bg-white pt-2 px-2 flex flex-col items-center shrink-0 mr-4 max-w-[300px] md:max-w-none md:grid-cols-3 2xl:grid-cols-5 ${css}`}

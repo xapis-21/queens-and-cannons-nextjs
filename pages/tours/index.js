@@ -2,7 +2,7 @@ import { Card } from "../../components";
 
 import client, { urlFor } from "../../lib/sanity";
 
-const Tours = ({ tours, route, image }) => {
+const Tours = ({ tours}) => {
   return (
     <div>
       <div
@@ -29,7 +29,7 @@ const Tours = ({ tours, route, image }) => {
               title={item?.title}
               key={item?.slug.current}
               slug={item?.slug.current}
-              route={route}
+              route={"tours"}
               css={"w-full max-w-[400px]"}
               image={
                 item.images

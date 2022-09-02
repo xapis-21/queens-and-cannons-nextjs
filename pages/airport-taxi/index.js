@@ -2,7 +2,7 @@ import { Card } from "../../components";
 
 import client, { urlFor } from "../../lib/sanity";
 
-const Taxi = ({ taxi, route, image }) => {
+const Taxi = ({ taxi}) => {
   return (
     <div>
       <div
@@ -30,7 +30,7 @@ const Taxi = ({ taxi, route, image }) => {
               title={item?.title}
               key={item?.slug.current}
               slug={item?.slug.current}
-              route={route}
+              route={"airport-taxi"}
               css={"w-full max-w-[400px]"}
               image={
                 item.images
@@ -49,7 +49,6 @@ const Taxi = ({ taxi, route, image }) => {
 
 export const getServerSideProps = async () => {
   const taxisQuery = '*[_type == "taxi"] | order(_createdAt desc)';
-
   const taxi = await client.fetch(taxisQuery);
 
   return {

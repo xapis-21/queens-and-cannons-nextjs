@@ -19,18 +19,12 @@ const Populars = ({ title, path, data }) => {
         </Link>
       </div>
       <div className="flex items-center overflow-x-scroll py-2 justify-start md:grid md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 md:gap-4 lg:gap-8 md:overscroll-x-hidden populars">
-        {/* <div className="sm:col-span-2 xs:col-span-2 lg:col-span-4 2xl:col-span-5 flex items-center text-2xl font-[500] uppercase">
-          <Link to={`${path}`} className="group flex items-center ">
-            <HiLink className="text-2xl duration-500  text-green-light" />
-            {title}
-          </Link>
-        </div> */}
+        
         {data?.map((item) => (
           <Card
             title={item?.title}
             key={item?.slug.current}
             slug={item?.slug.current}
-            // css={"2xl:last:block last:hidden"}
             route={path}
             image={
               item?.images
