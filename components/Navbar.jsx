@@ -68,7 +68,7 @@ const Menu = ({ func }) => {
         ["Portfolio", "/portfolio"],
         ["About", "/about"],
       ].map(([item, path]) => (
-        <Link key={path} href={path} onClick={func}>
+        <Link key={path} href={path}>
           <a
             className={`px-8 h-14 w-full mb-4 grid place-items-center first:ml-0 last:mr-0 hover:bg-green-light/50 [@supports(backdrop-filter:blur(0px))]:hover:bg-green-light/50 tracking-wide transition-colors duration-300 relative ${
               pathname === path && "bg-green-light/50"
@@ -96,7 +96,7 @@ const Menu = ({ func }) => {
                   ["Homes for rent", "homes-for-rent"],
                   ["Propery deals", "property-deals"],
                 ].map(([serv, link]) => (
-                  <Link href={link} onClick={func} key={link}>
+                  <Link href={link} key={link}>
                     <a className="px-2 w-full h-[40px] text-center hover:bg-green-light bg-white/90 my-[0.2px] text-[12px] flex items-center justify-center z-50">
                
                       {serv}

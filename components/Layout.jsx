@@ -1,12 +1,14 @@
 import React from "react";
-import { Header, Footer } from "./";
+import Navigation from "./Navigation";
+// import { Header, Footer } from "./";
 
 const Layout = ({ children }) => {
   return (
     <div className="h-full w-full">
-      <Header />
+      {/* <Header /> */}
+      <Navigation/>
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 export { default as Footer } from "./Footer";
 export { default as FormGroup } from "./FormGroup";
 export { default as Header } from "./Header";
+export { default as Navigation } from "./Navigation";
 export { default as Hero } from "./Hero";
 export { default as Layout } from "./Layout";
 export { default as Navbar } from "./Navbar";
