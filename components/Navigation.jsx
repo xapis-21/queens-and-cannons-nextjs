@@ -14,14 +14,14 @@ const Navigation = () => {
 
   return (
     <header className="fixed w-full top-0 left-0 z-20 px-4 md:px-8 py-2 grid place-items-center">
-      <nav class="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-lg">
-        <div class="container flex flex-wrap justify-between items-center mx-auto">
+      <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-lg">
+        <div className="container flex flex-wrap justify-between items-center mx-auto">
           <div className="flex items-center">
             <Link href="/">
-              <a class="flex items-center">
+              <a className="flex items-center">
                 <Image
                   src="/images/logo-full.svg"
-                  class="mr-3 h-6 sm:h-9"
+                  className="mr-3 h-6 sm:h-9"
                   alt="Queens and Cannon Safaris' logo"
                   height={56}
                   width={148}
@@ -29,14 +29,14 @@ const Navigation = () => {
               </a>
             </Link>
             <div
-              class="hidden justify-between items-center w-full lg:flex md:ml-8 md:w-auto md:order-1"
+              className="hidden justify-between items-center w-full lg:flex md:ml-8 md:w-auto md:order-1"
               id="navbar-sticky"
             >
-              <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  ">
+              <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  ">
                 {navlinks.map(([path, pathlink]) => (
                   <Link href={pathlink}>
                     <a
-                      class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
+                      className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                       aria-current="page"
                     >
                       {path}
@@ -46,7 +46,7 @@ const Navigation = () => {
               </ul>
             </div>
           </div>
-          <div class="flex md:order-2">
+          <div className="flex md:order-2">
             <div className="flex items-center text-white">
               <a
                 href="mailto:queensandcanonssafaris@gmail.com "

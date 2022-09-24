@@ -15,7 +15,7 @@ const Testimonial = ({ testimonial, image, name }) => {
             </div>
           </div>
           <p className="text-[12px] mt-4 text-white/60 max-w-[300px]">
-            "{testimonial}"
+            &quot;{testimonial}&quot;
           </p>
         </div>
       </div>
