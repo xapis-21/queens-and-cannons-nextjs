@@ -2,7 +2,7 @@ import {useState} from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { BsFillEnvelopeFill, BsTelephoneFill } from "react-icons/bs";
-import { HiX, HiMenu } from "react-icons/bs";
+import { HiX, HiMenu } from "react-icons/hi";
 
 
 const Navigation = () => {
