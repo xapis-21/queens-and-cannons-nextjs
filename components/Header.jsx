@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import { BsTelephoneFill, BsFillEnvelopeFill } from "react-icons/bs";
 import { HiOutlineMenu} from "react-icons/hi";
