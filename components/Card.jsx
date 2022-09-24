@@ -30,7 +30,7 @@ const Card = ({ title, location, price, image, css, slug, route }) => {
         <Link href={`/${route}/${slug}`} replace>
           <a className="border text-sm text-green-light group-hover:bg-green-light group-hover:text-white h-12 w-40 ml-1 grid place-items-center rounded-full transition-all duration-500">
             
-            Book Now
+          Read more
           </a>
         </Link>
       </div>
