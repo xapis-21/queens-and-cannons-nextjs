@@ -2,6 +2,8 @@ import {useState} from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { BsFillEnvelopeFill, BsTelephoneFill } from "react-icons/bs";
+import { HiX, HiMenu } from "react-icons/bs";
+
 
 const Navigation = () => {
      const [open, setOpen] = useState(false);
@@ -85,36 +87,11 @@ const Navigation = () => {
               {/* <!-- Menu open: "hidden", Menu closed: "block" --> */}
 
               {open ? (
-                <svg
-                  className="w-6 h-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <HiMenu/>
               ) : (
-                <svg
-                  className="w-6 h-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 8h16M4 16h16"
-                  />
-                </svg>
-              )}
+                <HiX/>
+              )
+              }
 
               {/* <!-- Menu open: "block", Menu closed: "hidden" --> */}
             </button>
