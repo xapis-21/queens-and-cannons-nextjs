@@ -11,14 +11,13 @@ const Hero = ({ featured }) => {
     <div
       id="hero"
       className="h-screen max-h-[1000px] w-screen bg-cover bg-center bg-no-repeat isolate z-40 "
-      // style={
-      //   featured &&
-      //   featured.image && {
-      //     backgroundImage: `url(${urlFor(featured?.image).url()})`,
-      //   }
-      // }
+      style={
+        featured &&
+        featured.image && {
+          backgroundImage: `url(${urlFor(featured?.image).url()})`,
+        }
+      }
     >
-      <Image src={urlFor(featured?.image).url()}  layout="fill" objectFit="cover" objectPosition={"center"} className={"-z-20"}/>
       <div className="w-full h-full absolute bg-black/60 -z-10 max-h-[1000px]" />
       <div className="w-full h-full flex justify-center items-center mx-auto max-w-[1728px]">
         <div className="text-white px-4">
