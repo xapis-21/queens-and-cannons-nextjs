@@ -40,10 +40,12 @@ const Home = ({ tours, taxis, featuredTour, testimonials }) => {
         <title>Hello</title>
       </Head>
       <main>
-        <Carousel> 
+        <Carousel>
+          <Hero featured={featuredTour} />
+          <Hero featured={featuredTour} />
           <Hero featured={featuredTour} />
         </Carousel>
-       
+
         <Search handleSearch={handleSearch} />
         <div className="w-full isolate relative pb-40">
           <div className="w-full mx-auto flex flex-col items-center max-w-[1720px]">
