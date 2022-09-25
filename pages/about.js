@@ -25,7 +25,7 @@ const About = () => {
         </div>
         <div className="w-full px-2 " id="#terms">
           <h1 className="text-3xl mb-4 font-[500]">OUR TERMS AND CONDITIONS</h1>
-          <div className="w-full flex">
+          <div className="w-full flex flex-col md:flex-row">
             <div className="px-2 pr-4">
               <h2 className="font-[500] underline">
                 Booking and reservations.
@@ -40,7 +40,7 @@ const About = () => {
                 other activities selected through the company(Queens and Canons
                 Safaris Ltd) payment platforms as it will be instructed by the
                 company before the date of the trip/or if not before starting
-                the trip on that day of starting the journey.{" "}
+                the trip on that day of starting the journey.
               </p>
             </div>
             <div className="pl-4">

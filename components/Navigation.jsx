@@ -10,7 +10,6 @@ const Navigation = () => {
      const navlinks = [
        ["Tours", "tours"],
        ["Airport taxi", "airport-taxi"],
-       ["Services", "/services"],
        ["Portfolio", "/portfolio"],
        ["About", "/about"],
      ];
