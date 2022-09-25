@@ -10,7 +10,7 @@ const Hero = ({ featured }) => {
   return (
     <div
       id="hero"
-      className="h-screen max-h-[400px] lg:max-h-[1000px] w-screen bg-cover bg-center bg-no-repeat isolate z-40 "
+      className="h-screen max-h-[400px] lg:max-h-[900px] w-screen bg-cover bg-center bg-no-repeat isolate z-40 "
       style={
         featured &&
         featured.image && {
