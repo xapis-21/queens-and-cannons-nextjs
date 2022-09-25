@@ -2,6 +2,8 @@ import { useState } from "react";
 import client from "../lib/sanity";
 import Head from "next/head";
 import { Hero, Search, Testimonials, Populars } from "../components";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import { Carousel } from "react-responsive-carousel";
 
 const Home = ({ tours, taxis, featuredTour, testimonials }) => {
   const [searchQ, setSearchQ] = useState(null);
@@ -38,7 +40,10 @@ const Home = ({ tours, taxis, featuredTour, testimonials }) => {
         <title>Hello</title>
       </Head>
       <main>
-        <Hero featured={featuredTour} />
+        <Carousel> 
+          <Hero featured={featuredTour} />
+        </Carousel>
+       
         <Search handleSearch={handleSearch} />
         <div className="w-full isolate relative pb-40">
           <div className="w-full mx-auto flex flex-col items-center max-w-[1720px]">

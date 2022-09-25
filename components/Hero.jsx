@@ -3,6 +3,7 @@ import { urlFor } from "../lib/sanity";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import Link  from "next/link";
 
+
 const Hero = ({ featured }) => {
   
   return (
