@@ -40,12 +40,12 @@ const Home = ({ tours, taxis, featuredTour, testimonials }) => {
         <title>Hello</title>
       </Head>
       <main>
-        <Carousel autoPlay={true} infiniteLoop={true} emulateTouch={true}>
+        <Carousel autoPlay={true} infiniteLoop={true} emulateTouch={true} showThumbs={false} showStatus={false} showArrows={false}>
           {/* <Hero featured={featuredTour} />
           <Hero featured={featuredTour} />
           <Hero featured={featuredTour} /> */}
           {tours?.map((item) => (
-            <Hero featured={item} key={item?.slug.current} />
+            <Hero featured={item} key={item?.slug.current} /> 
           ))}
         </Carousel>
 
