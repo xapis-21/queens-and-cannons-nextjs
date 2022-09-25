@@ -50,7 +50,8 @@ const Home = ({ tours, taxis, featuredTour, testimonials }) => {
           showStatus={false}
           showArrows={false}
           showIndicators={false}
-          transitionTime={5}
+          transitionTime={7}
+          useKeyboardArrows={true}
         >
           {/* <Hero featured={featuredTour} />
           <Hero featured={featuredTour} />
