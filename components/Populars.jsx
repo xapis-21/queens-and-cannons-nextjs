@@ -18,7 +18,7 @@ const Populars = ({ title, path, data }) => {
           </a>
         </Link>
       </div>
-      <div className="flex items-center overflow-x-scroll py-2 justify-start md:grid md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 md:gap-4 lg:gap-8 md:overscroll-x-hidden populars">
+      <div className="py-2 justify-start grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 md:gap-4 lg:gap-8 populars">
         
         {data?.map((item) => (
           <Card
