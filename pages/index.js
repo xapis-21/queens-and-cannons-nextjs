@@ -45,7 +45,7 @@ const Home = ({ tours, taxis, featuredTour, testimonials }) => {
           <Hero featured={featuredTour} />
           <Hero featured={featuredTour} /> */}
           {tours?.map((item) => (
-            <Hero featured={item} />
+            <Hero featured={item} key={item?.slug.current} />
           ))}
         </Carousel>
 
