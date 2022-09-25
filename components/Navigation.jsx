@@ -8,11 +8,12 @@ import { HiX, HiMenu } from "react-icons/hi";
 const Navigation = () => {
      const [open, setOpen] = useState(false);
      const navlinks = [
-        ["Home", "/"],
-        ["Services", "/services"],
-        ["Portfolio", "/portfolio"],
-        ["About", "/about"],
-      ]
+       ["Tours", "tours"],
+       ["Airport taxi", "airport-taxi"],
+       ["Services", "/services"],
+       ["Portfolio", "/portfolio"],
+       ["About", "/about"],
+     ];
 
   return (
     <header className="fixed w-full top-0 left-0 z-20 px-2 md:px-8 py-2 grid place-items-center">
@@ -98,7 +99,7 @@ const Navigation = () => {
         </div>
       </nav>
       {open && (
-        <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-lg border-t border-white/20">
+        <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-lg border-t border-white/10 mt-2">
           <ul className="flex flex-col bg-gray-50 md:hidden">
             {navlinks.map(([path, pathlink]) => (
               <Link href={pathlink} key={pathlink}>
