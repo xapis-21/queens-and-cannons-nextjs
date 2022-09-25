@@ -14,6 +14,13 @@ const Navigation = () => {
        ["About", "/about"],
      ];
 
+     const handleClick = () =>{
+      setOpen(!open)
+      setTimeout(()=>{
+         setOpen(false);
+      },5000)
+     }
+
   return (
     <header className="fixed w-full top-0 left-0 z-20 px-2 md:px-8 py-2 grid place-items-center">
       <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-lg">
@@ -82,7 +89,7 @@ const Navigation = () => {
             <button
               type="button"
               className="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
-              onClick={() => setOpen(!open)}
+              onClick={handleClick}
             >
               {/* <!-- Menu open: "hidden", Menu closed: "block" --> */}
 
