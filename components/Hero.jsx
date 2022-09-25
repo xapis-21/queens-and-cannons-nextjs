@@ -19,15 +19,15 @@ const Hero = ({ featured }) => {
       }
     >
       <div className="w-full h-full absolute bg-black/60 -z-10 max-h-[1000px]" />
-      <div className="w-full h-full flex justify-center items-center mx-auto max-w-[1728px]">
+      <div className="w-full h-full flex justify-center items-end md:items-center mx-auto max-w-[1728px]">
         <div className="text-white px-4">
-          <h1 className="uppercase text-[24px] md:text-[60px] 2xl:text-[100px] md:text-center font-[500] md:font-bold leading-tight tracking-tighter max-w-[1200px]">
+          <h1 className="uppercase text-[20px] md:text-[60px] 2xl:text-[100px] md:text-center font-[500] md:font-bold leading-tight tracking-tighter max-w-[1200px]">
             {featured?.title}
           </h1>
           <p className="text-[12px] md:text-[18px] mt-4 max-w-[800px] md:font-thin text-white md:text-center mx-auto">
             {featured?.excerpt}
           </p>
-          <div className="flex mt-14 py-4 justify-center items-center">
+          <div className="flex mt-4 py-4 justify-center items-center">
             <Link href={`/tours/${featured?.slug?.current}`}>
               <button className="group bg-green-light/90 w-full md:w-fit px-8 py-4 rounded-lg hover:bg-green-light flex items-center justify-center transition-all duration-300 text-semibold text-sm">
                 READ MORE

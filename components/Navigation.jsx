@@ -15,7 +15,7 @@ const Navigation = () => {
      ]
 
   return (
-    <header className="fixed w-full top-0 left-0 z-20 px-4 md:px-8 py-2 grid place-items-center">
+    <header className="fixed w-full top-0 left-0 z-20 px-2 md:px-8 py-2 grid place-items-center">
       <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-lg">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <div className="flex items-center">
