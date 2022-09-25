@@ -12,7 +12,7 @@ const Navigation = () => {
         ["Services", "/services"],
         ["Portfolio", "/portfolio"],
         ["About", "/about"],
-     ]
+      ]
 
   return (
     <header className="fixed w-full top-0 left-0 z-20 px-2 md:px-8 py-2 grid place-items-center">
@@ -92,6 +92,20 @@ const Navigation = () => {
             </button>
           </div>
         </div>
+      </nav>
+      <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-b-lg border-t-2 border-white/80">
+        <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
+          {navlinks.map(([path, pathlink]) => (
+            <Link href={pathlink} key={pathlink}>
+              <a
+                className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
+                aria-current="page"
+              >
+                {path}
+              </a>
+            </Link>
+          ))}
+        </ul>
       </nav>
     </header>
   );
