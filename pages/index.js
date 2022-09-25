@@ -37,7 +37,7 @@ const Home = ({ tours, taxis, featuredTour, testimonials }) => {
   return (
     <div>
       <Head>
-        <title>Hello</title>
+        <title>Queens and canon safaris | Africa safaris in East and Southern Africa</title>
       </Head>
       <main>
         <Carousel autoPlay={true} infiniteLoop={true} emulateTouch={true} showThumbs={false} showStatus={false} showArrows={false} showIndicators={false}>
