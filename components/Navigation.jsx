@@ -93,7 +93,7 @@ const Navigation = () => {
           </div>
         </div>
       </nav>
-      <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-b-lg border-t-2 border-white/80">
+      <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-lg border-t border-white/20">
         <ul className="flex flex-col bg-gray-50 md:hidden">
           {navlinks.map(([path, pathlink]) => (
             <Link href={pathlink} key={pathlink}>
