@@ -28,7 +28,7 @@ const Hero = ({ featured }) => {
           <div className="flex mt-14 py-4 justify-center items-center">
             <Link href={`/tours/${featured?.slug?.current}`}>
               <button className="group bg-green-light/90 h-14 md:h-16 w-80 rounded-lg hover:bg-green-light flex items-center justify-center transition-all duration-300">
-                BOOK NOW
+                READ MORE
                 <HiOutlineArrowNarrowRight className="group-hover:translate-x-2 ml-2 text-xl  text-white duration-500" />
               </button>
             </Link>
