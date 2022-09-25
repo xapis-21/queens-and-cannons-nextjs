@@ -57,10 +57,10 @@ const Navigation = () => {
                 queensandcanonssafaris@gmail.com
               </a>
               <a
-                href="tel:+256 200 906713"
+                href="tel:+256 703 728935"
                 className="hidden lg:flex items-center ml-4"
               >
-                +256 200 906713
+                +256 703 728935
               </a>
               <a
                 href="mailto:queensandcanonssafaris@gmail.com "
@@ -86,12 +86,7 @@ const Navigation = () => {
             >
               {/* <!-- Menu open: "hidden", Menu closed: "block" --> */}
 
-              {open ? (
-                <HiMenu/>
-              ) : (
-                <HiX/>
-              )
-              }
+              {open ? <HiMenu /> : <HiX />}
 
               {/* <!-- Menu open: "block", Menu closed: "hidden" --> */}
             </button>

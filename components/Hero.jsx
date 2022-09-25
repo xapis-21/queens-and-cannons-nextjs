@@ -8,7 +8,7 @@ const Hero = ({ featured }) => {
   return (
     <div
       id="hero"
-      className="h-screen w-screen bg-cover bg-center bg-no-repeat isolate z-40 "
+      className="h-screen max-h-[1000px] w-screen bg-cover bg-center bg-no-repeat isolate z-40 "
       style={
         featured && featured.image && {
           backgroundImage: `url(${urlFor(featured?.image).url()})`,
