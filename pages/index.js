@@ -37,15 +37,26 @@ const Home = ({ tours, taxis, featuredTour, testimonials }) => {
   return (
     <div>
       <Head>
-        <title>Queens and canon safaris | Africa safaris in East and Southern Africa</title>
+        <title>
+          Queens and canon safaris | Africa safaris in East and Southern Africa
+        </title>
       </Head>
       <main>
-        <Carousel autoPlay={true} infiniteLoop={true} emulateTouch={true} showThumbs={false} showStatus={false} showArrows={false} showIndicators={false}>
+        <Carousel
+          autoPlay={true}
+          infiniteLoop={true}
+          emulateTouch={true}
+          showThumbs={false}
+          showStatus={false}
+          showArrows={false}
+          showIndicators={false}
+          transitionTime={5}
+        >
           {/* <Hero featured={featuredTour} />
           <Hero featured={featuredTour} />
           <Hero featured={featuredTour} /> */}
           {tours?.map((item) => (
-            <Hero featured={item} key={item?.slug.current} /> 
+            <Hero featured={item} key={item?.slug.current} />
           ))}
         </Carousel>
 
