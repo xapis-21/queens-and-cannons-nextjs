@@ -40,7 +40,7 @@ const Home = ({ tours, taxis, featuredTour, testimonials }) => {
         <title>Hello</title>
       </Head>
       <main>
-        <Carousel autoPlay={true} infiniteLoop={true} emulateTouch={true} showThumbs={false} showStatus={false} showArrows={false}>
+        <Carousel autoPlay={true} infiniteLoop={true} emulateTouch={true} showThumbs={false} showStatus={false} showArrows={false} showIndicators={false}>
           {/* <Hero featured={featuredTour} />
           <Hero featured={featuredTour} />
           <Hero featured={featuredTour} /> */}
