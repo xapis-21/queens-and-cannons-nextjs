@@ -86,27 +86,33 @@ const Navigation = () => {
             >
               {/* <!-- Menu open: "hidden", Menu closed: "block" --> */}
 
-              {open ? <HiMenu /> : <HiX />}
+              {open ? (
+                <HiX className="text-white text-2xl" />
+              ) : (
+                <HiMenu className="text-white text-2xl" />
+              )}
 
               {/* <!-- Menu open: "block", Menu closed: "hidden" --> */}
             </button>
           </div>
         </div>
       </nav>
-      <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-lg border-t border-white/20">
-        <ul className="flex flex-col bg-gray-50 md:hidden">
-          {navlinks.map(([path, pathlink]) => (
-            <Link href={pathlink} key={pathlink}>
-              <a
-                className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
-                aria-current="page"
-              >
-                {path}
-              </a>
-            </Link>
-          ))}
-        </ul>
-      </nav>
+      {open && (
+        <nav className="bg-green-dark/80 backdrop-blur-lg px-2 sm:px-4 py-2 max-w-[1720px] w-full rounded-lg border-t border-white/20">
+          <ul className="flex flex-col bg-gray-50 md:hidden">
+            {navlinks.map(([path, pathlink]) => (
+              <Link href={pathlink} key={pathlink}>
+                <a
+                  className="block py-4 my-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
+                  aria-current="page"
+                >
+                  {path}
+                </a>
+              </Link>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
