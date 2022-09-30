@@ -61,7 +61,7 @@ const Header = () => {
               <BsFillEnvelopeFill fontSize={10} />
             </span>
           </a>
-          <a href="tel:+256 0200 906713" className="flex items-center ml-4">
+          <a href="tel:+256 703 728935" className="flex items-center ml-4">
             <span className="border p-2 rounded-full">
               <BsTelephoneFill fontSize={10} />
             </span>
