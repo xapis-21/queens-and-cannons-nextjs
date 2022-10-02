@@ -28,7 +28,7 @@ const About = () => {
                 }
                 target={"_blank"}
                 rel="noreferrer"
-                className="group bg-green-light/0 h-14 w-fit rounded-lg hover:underline-0 underline flex items-center justify-center transition-all duration-300 text-green-light mt-4"
+                className="group bg-green-light/0 h-fit w-fit rounded-lg hover:underline-0 underline flex items-center justify-center transition-all duration-300 text-green-light mt-4"
               >
                 Listed on Safari bookings
                 <HiOutlineArrowNarrowRight className="group-hover:translate-x-2 ml-2 text-xl  text-white duration-500" />
