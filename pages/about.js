@@ -22,6 +22,17 @@ const About = () => {
             with the help of our safari specialist. Your safari satisfaction is
             our mission.
           </p>
+          <a
+                href={
+                  "https://www.safaribookings.com"
+                }
+                target={"_blank"}
+                rel="noreferrer"
+                className="group bg-green-light/0 h-14 w-fit rounded-lg hover:underline flex items-center justify-center transition-all duration-300 text-white mt-4"
+              >
+                Listed on Safari bookings
+                <HiOutlineArrowNarrowRight className="group-hover:translate-x-2 ml-2 text-xl  text-white duration-500" />
+              </a>
         </div>
         <div className="w-full px-2 " id="#terms">
           <h1 className="text-3xl mb-4 font-[500]">OUR TERMS AND CONDITIONS</h1>
@@ -44,7 +55,7 @@ const About = () => {
               </p>
             </div>
             <div className="pl-4">
-              <h2 className="font-[500] underline">Our guides.</h2>
+              <h2 className="font-[500] underline">Our guides</h2>
               <p className="text-[14px] py-2">
                 We can at times switch guides per country and region due to
                 Linguistic nature of African countries. So we request all our
@@ -52,6 +63,7 @@ const About = () => {
                 guide is introduced amidst the journey, its just for the purpose
                 of quick interactions with the local communities.
               </p>
+             
               <a
                 href={
                   "https://github.com/xapis-21/queens-and-cannons-nextjs/raw/main/public/images/queensandsafaris-terms-and-conditions.pdf"
