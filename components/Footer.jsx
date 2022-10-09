@@ -1,5 +1,6 @@
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router';
 import {
   BsTelephoneFill,
@@ -27,9 +28,12 @@ const Footer = () => {
         </div>
         <div className="w-full flex flex-col lg:flex-row lg:justify-between lg:flex-lg items-start lg:items-center px-2 mt-4">
           <div className="hidden lg:block">
-            <img
-              src={logo}
+            <Image
+              src={"/images/logo-full.svg"}
               alt="Queens and canons safaris logo"
+              width={120}
+              height={40}
+              objectFit={"contain"}
               className="h-28"
             />
           </div>
