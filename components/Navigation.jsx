@@ -78,7 +78,7 @@ const Navigation = () => {
                 </span>
               </a>
               <a
-                href="tel:+256 0200 906713"
+                href="tel:+256 703 728935"
                 className="flex lg:hidden items-center ml-4"
               >
                 <span className="border p-2 rounded-full">

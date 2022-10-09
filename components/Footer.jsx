@@ -132,7 +132,7 @@ const Footer = () => {
                 <span className=" text-lg ml-2 rounded-full">
                   <BsWhatsapp />
                 </span>
-                <span className="ml-2">+256 200 906713</span>
+                <span className="ml-2">+256 703 728935</span>
               </a>
               <a
                 href={`mailto:queensandcanonssafaris@gmail.com`}
