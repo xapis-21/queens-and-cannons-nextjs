@@ -84,11 +84,12 @@ const Footer = () => {
             <ul
               className={`justify-between text-white/80 items-start w-full flex flex-col`}
             >
-              {[
-                ["Home", "/"],
-                ["Services", "/services"],
-                ["Portfolio", "/portfolio"],
-              ].map(([item, path]) => (
+              { [
+                  ["Tours", "tours"],
+                  ["Airport taxi", "airport-taxi"],
+                  ["Portfolio", "/portfolio"],
+                  ["About", "/about"],
+     ].map(([item, path]) => (
                 <Link
                   key={path}
                   href={path}

@@ -15,10 +15,10 @@ const Tours = ({ tours}) => {
         <div className="-z-10 h-full w-full bg-black/60 absolute top-0 left-0" />
         <div className="w-full h-full flex flex-col items-center justify-end pb-8 lg:pb-14 pl-4 max-w-[1720px] mx-auto">
           <h1 className="text-2xl lg:text-5xl font-[500] lg:max-w-[800px] text-center mb-4">
-            TOURS AND TRAVEL
+            QUEENS AND CANONS SAFARIS LTD
           </h1>
           <p className="text-[12px] text-center lg:text-[14px] max-w-[400px]">
-            Enjoy the best safari in Africa with our professional guides
+            Bringing you the best safari in Africa with our professional guides
           </p>
         </div>
       </div>
